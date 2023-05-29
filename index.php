@@ -21,7 +21,12 @@
     printf("Hola %s",$word);
     $name = "John";
     $mensaje = sprintf("Hola, %s",$name);
-    echo $mensaje;
+    echo $mensaje . "<br></br>";
 
-
+    // muestra información estructurada sobre una o más expresiones incluyendo su tipo y valor
+    echo var_dump ($name) . "<br></br>";
+    // "define" es la sintaxis mas propia para declarar constantes, pero hay otras maneras como const
+    // Solo que const no obliga a llamar la constante en mayusculas
+    define("PI",3.1416);
+    echo PI
 ?>
