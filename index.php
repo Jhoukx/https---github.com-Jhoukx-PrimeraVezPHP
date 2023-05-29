@@ -28,5 +28,17 @@
     // "define" es la sintaxis mas propia para declarar constantes, pero hay otras maneras como const
     // Solo que const no obliga a llamar la constante en mayusculas
     define("PI",3.1416);
-    echo PI
+    echo PI , "<br></br>";
+
+    /**
+     * ? Tipos de datos
+     */
+
+    //Modificar index de un array
+    $array = ["edad" => 23, "nombre" => "g"];
+    var_dump($array);
+    
+    //Boolean 
+    $login = true;
+    var_dump($login);
 ?>
