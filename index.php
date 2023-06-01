@@ -41,4 +41,136 @@
     //Boolean 
     $login = true;
     var_dump($login);
+
+
+    /**
+     * ?ARRAYS EN CLASE 
+     */
+
+    /**
+     * todo Array Indexado
+     * *Este tipo de array tiene índices numéricos. Aquí está un ejemplo de cómo definir un array indexado:
+     * @var array $nombres
+     */
+    $nombres = array("Juan", "Pedro", "Santiago");
+    print_r($nombres);
+    // echo "<hr>";
+      /**
+     * todo Array Multidimensional
+     * *Este es un array que contiene uno o más arrays en sí. Un ejemplo común sería un array que contiene información para varias personas, donde cada persona es un array que contiene la información para esa persona. Aquí está un ejemplo:
+     * @var array $personas
+     */
+    $personas = array(
+        "Juan" => array(
+            "Edad" => 35, 
+            "Ciudad" => "Madrid", 
+            "País" => "España"),
+        "Pedro" => array(
+            "Edad" => 37, 
+            "Ciudad" => "Barcelona", 
+            "País" => "España"),
+        "Santiago" => array(
+            "Edad" => 43, 
+            "Ciudad" => "Valencia", 
+            "País" => "España")
+    );
+     /**
+     * ? Ejemplo de como insertar un dato nuevo al array Multidimensional
+     */
+    echo "<pre>";
+    $personas["Pedro"]["Altura"] = 1.63;
+    print_r($personas);
+    /**
+     * ? Ejemplo de como aceder al array
+     */
+    print_r($personas['Pedro']['País']);
+    echo "<hr>";
+
+    /**
+     * todo Funciones de arrays 
+    */
+    echo "<h1>Funciones de arrays</h1>";
+
+    /**
+     * ?Array Flip
+     * *Intercambia las claves con sus valores 
+     */
+    echo "<h3>array_flip():</h3>";
+    $array_example1 = array (
+        "nombre" => "Gerardo",
+        "Edad" => 45,
+        "Estado Civil" => "Confuso"
+    );
+    $flipped = array_flip($array_example1);
+    print_r($flipped);
+
+    /**
+     * ? Array Fill
+     * *Rellena un array con un valor específico
+     */
+    echo "<h3>array_fill():</h3>";
+    $array_example2 = array_fill(15,6,"Tequila");
+    print_r($array_example2);
+
+    /**
+     * ? Array filter
+     * * Filtra los elementos de un array con una función 
+     */
+    echo "<h3>array_filter():</h3>";
+    function impar ($number){
+        return !($number % 2 ==0);
+    }
+    $array_example3 = array(1,2,3,4,5,6,7,8,9,10);
+    print_r(array_filter($array_example3,"impar"));
+
+    /**
+     * ? Array map
+     * * Aplica la funcion a todos los elementos de un array
+     */
+    
+    echo "<h3>array_map():</h3>";
+    $array_example4 = array(5,10,15,20);
+    print_r(array_map(fn($num)=>$num+5,$array_example4));
+
+    /**
+     * ? Array reduce
+     * * Reduce a un solo valor usando todos los valores del array, utiliza una funcion para el valor 
+     */
+    
+     echo "<h3>array_reduce():</h3>";
+     $array_example5 =array(5,5,3,5);
+     print_r(array_reduce($array_example5,fn($acum,$val)=>
+        $acum+= $val
+    ));
+     
+    /**
+     * ? Array key exists
+     * * devuelve un valor booleano si existe o no la llave 
+     */
+
+    echo "<h3>array_key_exists():</h3>";
+    $array_example6 = array("nombre"=>"Lucho","profesion"=>"programador");
+    echo array_key_exists("novia",$array_example6)?"Buena lucho":"Ni modo";
+
+    /**
+     * ? in Array
+     * *Devuelve un valor booleano si existe o no el dato en el array;
+     */
+    
+    echo "<h3>in_array():</h3>";
+    $array_example7= array("Pepito","Pepata","Andres");
+    echo in_array("Pepata",$array_example7)? "Pepata existe 0.o" : "Pepata no existe :D";
+
+    
+
+    
+    
+    
+
+    
+
+    
+    
+
+
 ?>
