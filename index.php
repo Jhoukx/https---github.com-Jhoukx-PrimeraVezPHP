@@ -123,7 +123,7 @@
 
     /**
      * ? Array map
-     * * Aplica la funcion a todos los elementos de un array
+     * * Devuelve un array y aplica la funcion a todos los elementos de un array
      */
     
     echo "<h3>array_map():</h3>";
@@ -184,5 +184,83 @@
     $array_example10_1 = array("amarillo","rojo","rosado");
     $array_example10_2 = array("naranja","rojo","rosado","gris");
     print_r(array_intersect($array_example10_1,$array_example10_2));
-    
-    
+    /**
+     * ? Array diff
+     * * Devuelve un array con los valores diferentes de dos o más arrays 
+     */
+    echo "<h3>array_diff():</h3>";
+    $array_example11_1 = array("a" => "green", "red", "blue", "red");
+    $array_example11_2 = array("b" => "green", "yellow", "red");
+    print_r(array_diff($array_example11_1,$array_example11_2));
+    /**
+     * ? Array push
+     * *Agrega uno o más elementos al final de un array (Modifica el original)
+     */
+    echo "<h3>array_push():</h3>";
+    $array_example12 = array("El","ba");
+    array_push($array_example12,"jito");
+    print_r($array_example12);
+    /**
+     * ? Array pop
+     * * Elimina el ultimo elemento del array (Modifica el original)
+     */
+    echo "<h3>array_pop():</h3>";
+    $array_example13 = array("orange", "banana", "apple", "raspberry");
+    array_pop($array_example13);
+    print_r($array_example13);
+    /**
+     * ? Array Reverse
+     * * Retorna un array con los elementos en orden inverso
+     */
+    echo "<h3>array_pop():</h3>";
+    $array_example14= array("php", 4.0, array("green", "red"));
+    echo "<h4>-Array</h4>";
+    print_r($array_example14);
+    echo "<h4>-Array revertido</h4>";
+    print_r(array_reverse($array_example14));
+    /**
+     * ? Array sum 
+     * Devuelve un entero o float de la suma de los valores de un array ARRAYS INDEXADOS O DE ASIGNACION
+     */
+    echo "<h3>array_sum():</h3>";
+    $array_example15 = array("a" => 1.2, "b" => 2.3, "c" => 3.4);
+    echo "Suma: ". array_sum($array_example15);
+    /**
+     * ? Array product 
+     * * Devuelve el producto de los valores de un array (Multiplica todos los valores)
+     */
+    echo "<h3>array_product():</h3>";
+    $array_example16 = array(2,5,2,2);
+    echo array_product($array_example16);
+    /**
+     * ? Array chunk
+     * * Divide un array en fragmentos más pequeños.
+     */
+    echo "<h3>array_chunk():</h3>";
+    $array_example17 = array('a', 'b', 'c', 'd', 'e');
+    print_r(array_chunk($array_example17,2));
+    /**
+     * ? Array Keys
+     * * Devuelve un array de todas las llaves de un array
+     */
+    echo "<h3>array_keys():</h3>";
+    $array_example18 =array(0 => 100, "color" => "red");
+    print_r(array_keys($array_example18));
+    /**
+     * ? Array Values
+     * * Devuelve un array detodos los valores de un array.
+     */
+    echo "<h3>array_values():</h3>";
+    $array_example19 = array("size" => "XL", "color" => "gold");
+    print_r(array_values($array_example19));
+    /**
+     * ? Array Walk
+     * * Aplica una función de devolución de llamada a cada elemento de un array.
+     */
+    echo "<h3>array_walk():</h3>";
+    function test_print($item2, $key){
+        echo "$key. $item2\n";
+    }
+    $array_example20 = array("a" => "calculadora", "b" => "documentacion", "c" => "ejercicios");
+    echo "<h4>Cosas que hacer:</h4>";
+    array_walk($array_example20,"test_print");    
