@@ -17,7 +17,6 @@
     /**
      * "sprintf" Devuelve la cadena formateada como resultado
      */
-     
     printf("Hola %s",$word);
     $name = "John";
     $mensaje = sprintf("Hola, %s",$name);
@@ -55,7 +54,7 @@
     $nombres = array("Juan", "Pedro", "Santiago");
     print_r($nombres);
     // echo "<hr>";
-      /**
+    /**
      * todo Array Multidimensional
      * *Este es un array que contiene uno o más arrays en sí. Un ejemplo común sería un array que contiene información para varias personas, donde cada persona es un array que contiene la información para esa persona. Aquí está un ejemplo:
      * @var array $personas
@@ -74,7 +73,7 @@
             "Ciudad" => "Valencia", 
             "País" => "España")
     );
-     /**
+    /**
      * ? Ejemplo de como insertar un dato nuevo al array Multidimensional
      */
     echo "<pre>";
@@ -103,7 +102,6 @@
     );
     $flipped = array_flip($array_example1);
     print_r($flipped);
-
     /**
      * ? Array Fill
      * *Rellena un array con un valor específico
@@ -137,12 +135,11 @@
      * * Reduce a un solo valor usando todos los valores del array, utiliza una funcion para el valor 
      */
     
-     echo "<h3>array_reduce():</h3>";
-     $array_example5 =array(5,5,3,5);
-     print_r(array_reduce($array_example5,fn($acum,$val)=>
+    echo "<h3>array_reduce():</h3>";
+    $array_example5 =array(5,5,3,5);
+    print_r(array_reduce($array_example5,fn($acum,$val)=>
         $acum+= $val
     ));
-     
     /**
      * ? Array key exists
      * * devuelve un valor booleano si existe o no la llave 
@@ -161,16 +158,31 @@
     $array_example7= array("Pepito","Pepata","Andres");
     echo in_array("Pepata",$array_example7)? "Pepata existe 0.o" : "Pepata no existe :D";
 
-    
+    /**
+     * ? Array rand
+     * *Devuelve una o varias claves aleatorias de un array en otro array
+     */
+    echo "<h3>array_rand():</h3>";
+    $array_example8 = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
+    $rand_keys = array_rand($array_example8, 2);
+    var_dump($rand_keys);
+    echo $array_example8[$rand_keys[0]] . "\n";
+    echo $array_example8[$rand_keys[1]] . "\n";
 
+    /**
+     * ? Array unique
+     * * Devuelve un array eliminando los valores duplicados de un array 
+     */
+    echo "<h3>array_unique():</h3>";
+    $array_example9 = array("a" => "verde", "rojo", "b" => "verde", "azul", "rojo");
+    print_r(array_unique($array_example9));
+    /**
+     * ? Array intersect 
+     * * Devuelve un array con los valores en comun de varios arrays
+     */
+    echo "<h3>array_intersect():</h3>";
+    $array_example10_1 = array("amarillo","rojo","rosado");
+    $array_example10_2 = array("naranja","rojo","rosado","gris");
+    print_r(array_intersect($array_example10_1,$array_example10_2));
     
     
-    
-
-    
-
-    
-    
-
-
-?>
