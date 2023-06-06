@@ -263,4 +263,57 @@
     }
     $array_example20 = array("a" => "calculadora", "b" => "documentacion", "c" => "ejercicios");
     echo "<h4>Cosas que hacer:</h4>";
-    array_walk($array_example20,"test_print");    
+    array_walk($array_example20,"test_print");
+    /**
+     * todo ISSET y EMPTY
+     */
+    echo "<hr>";
+    /**
+     * todo FUNCIONES PHP
+     */
+
+    echo "<h1>Funciones PHP</h1>";
+
+    /**
+     * *Exige el tipado en todo el codigo
+     * declare(strict_types=1);
+     */
+    echo "PERMITE EL TIPADO ESTRICTO : declare(strict_types=1)". "<br/>";
+    
+    /**
+     * *Funcion con tipado estricto
+     * function saludar(string $nombre):? string{
+     *    if($nombre=="Miguel"){
+     *       return "Hola que mas";
+     *   }else{
+     *       return null;
+     *   }
+     *  }
+     * saludar();
+     */
+    
+    /**
+     * *Funcion anonima
+     * $fn = function():bool{     
+     *  return true; 
+     * };
+     * echo $fn();
+     */
+
+
+    /**
+     * *Use 
+     * Permite usar un dato  sin pasarlo como parametro
+     */
+    
+    $nombre = "Miguel";
+     $fn = function () use($nombre):string{
+        return "Dato pasado por 'use' :".$nombre;
+     };
+     echo $fn() . "<br/>";
+
+    /**
+     * !Buscar para consumir apis
+     * file_get_contents()
+     */ 
+?>
