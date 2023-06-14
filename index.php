@@ -278,7 +278,7 @@
      * *Exige el tipado en todo el codigo
      * declare(strict_types=1);
      */
-    echo "PERMITE EL TIPADO ESTRICTO : declare(strict_types=1)". "<br/>";
+    echo "PERMITE EL TIPADO ESTRICTO : declare(strict_types=1)" . "<br/>";
     
     /**
      * *Funcion con tipado estricto
@@ -307,13 +307,16 @@
      */
     
     $nombre = "Miguel";
-     $fn = function () use($nombre):string{
-        return "Dato pasado por 'use' :".$nombre;
-     };
-     echo $fn() . "<br/>";
-
+    $fn = function () use($nombre):string{
+        return "Dato pasado por 'use' :".$nombre . "<br/>";
+    };
+    echo $fn() . "<br/>";
     /**
-     * !Buscar para consumir apis
-     * file_get_contents()
-     */ 
+     * *Funcion que no retorna un valor 
+     */
+    function funcionVoid($numero1,$numero2){
+        echo "Funcion sin retornar";
+        echo $numero1 + $numero2;
+    } 
+    funcionVoid(5,5);
 ?>
