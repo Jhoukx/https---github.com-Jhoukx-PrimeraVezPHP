@@ -315,8 +315,50 @@
      * *Funcion que no retorna un valor 
      */
     function funcionVoid($numero1,$numero2){
-        echo "Funcion sin retornar";
+        echo "Funcion sin retornar ";
         echo $numero1 + $numero2;
     } 
     funcionVoid(5,5);
+
+    /**
+     * todo json_encode y json_decode
+     */
+    
+    /**
+     * * json_encode
+     *  Sirve para convertir una estructura de datos a una cadena JSON
+     */
+    echo "<h1>Json encode y decode</h1>";
+    echo "<h3>json_encode </h3>";
+    echo "Antes del json_encode:" . "<br/>";
+    echo "<br/>";
+    $jsonEncode = [
+        [
+            "nombre"=> "Iphone",
+            "precio"=> 500,
+            "inStock"=>true
+        ],
+        [
+            "nombre"=> "Android",
+            "precio"=> 300,
+            "inStock"=>false
+        ]
+        ];
+    print_r($jsonEncode);
+    echo "Después del json_encode:" . "<br/>";
+    echo "<br/>";
+    $jsonDecode =json_encode($jsonEncode);
+    print_r(json_encode($jsonEncode));
+    /**
+     * * json_decode
+     *  Sirve para convertir una cadena JSON a una structura de datos de PHP
+     */
+    echo "<h3>json_decode </h3>";
+    echo "Antes del json_decode" . "<br/>";
+    print_r($jsonDecode);
+    echo "<br/>". "<br/>";
+    echo "Después del json_decode:" . "<br/>";
+    echo "<br/>";
+    print_r(json_decode($jsonDecode));
+
 ?>
